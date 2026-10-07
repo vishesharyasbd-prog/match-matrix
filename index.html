@@ -79,11 +79,9 @@ padding:42px 25px 32px;
 text-align:center;
 border-radius:25px;
 
-background:
-rgba(255,255,255,.055);
+background:rgba(255,255,255,.055);
 
-border:
-1px solid rgba(255,255,255,.13);
+border:1px solid rgba(255,255,255,.13);
 
 box-shadow:
 0 0 35px rgba(255,190,50,.08),
@@ -114,7 +112,7 @@ color:rgba(255,255,255,.78);
 margin-bottom:27px;
 }
 
-/* TELEGRAM LINK */
+/* CLICKABLE JOIN AREA */
 
 .join-btn{
 position:relative;
@@ -134,11 +132,11 @@ linear-gradient(
 );
 
 color:#080808;
+
 font-size:16px;
 font-weight:800;
 letter-spacing:.7px;
 
-text-decoration:none;
 cursor:pointer;
 overflow:hidden;
 
@@ -147,6 +145,9 @@ box-shadow:
 0 0 28px rgba(255,200,60,.13);
 
 transition:.25s;
+
+user-select:none;
+-webkit-user-select:none;
 }
 
 .join-btn::before{
@@ -243,13 +244,13 @@ Join the official Match Matrix Telegram channel
 for match updates and analysis.
 </div>
 
-<a
-href="https://t.me/+dZqGYunQlQk0Zjll"
+<!-- NOT A BUTTON / NOT AN ANCHOR -->
+<div
 class="join-btn"
 id="joinBtn"
 >
 JOIN TELEGRAM
-</a>
+</div>
 
 <div class="bottom-text">
 Tap the button above to join the channel.
@@ -263,23 +264,16 @@ document
 .getElementById("joinBtn")
 .addEventListener("click", function(){
 
-/* MANUAL SUBSCRIBE EVENT */
-
+/* ONLY MANUAL SUBSCRIBE EVENT */
 fbq('track', 'Subscribe');
 
-/*
-   Small delay so Meta can receive
-   the Subscribe event before Telegram opens.
-*/
-
-event.preventDefault();
-
+/* TELEGRAM */
 setTimeout(function(){
 
 window.location.href =
 "https://t.me/+dZqGYunQlQk0Zjll";
 
-},350);
+},500);
 
 });
 
