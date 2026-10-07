@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Match Matrix</title>
+
+<!-- META PIXEL -->
+<script>
+!function(f,b,e,v,n,t,s)
+{
+if(f.fbq)return;
+n=f.fbq=function(){
+n.callMethod ?
+n.callMethod.apply(n,arguments) : n.queue.push(arguments)
+};
+
+if(!f._fbq)f._fbq=n;
+n.push=n;
+n.loaded=!0;
+n.version='2.0';
+n.queue=[];
+
+t=b.createElement(e);
+t.async=!0;
+t.src=v;
+
+s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)
+}
+(window, document, 'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', '1449156887356539');
+fbq('track', 'PageView');
+</script>
+
+<noscript>
+<img
+height="1"
+width="1"
+style="display:none"
+src="https://www.facebook.com/tr?id=1449156887356539&ev=PageView&noscript=1"
+/>
+</noscript>
+
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+min-height:100vh;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+padding:20px;
+
+font-family:Arial,Helvetica,sans-serif;
+
+background:
+radial-gradient(
+circle at 50% 20%,
+rgba(255,190,50,.10),
+transparent 35%
+),
+#050505;
+
+color:white;
+
+}
+
+
+/* GLASS BOX */
+
+.container{
+
+width:100%;
+max-width:400px;
+
+padding:42px 25px 32px;
+
+text-align:center;
+
+border-radius:25px;
+
+background:
+rgba(255,255,255,.055);
+
+border:
+1px solid rgba(255,255,255,.13);
+
+box-shadow:
+
+0 0 35px
+rgba(255,190,50,.08),
+
+inset 0 1px 0
+rgba(255,255,255,.08);
+
+backdrop-filter:blur(18px);
+-webkit-backdrop-filter:blur(18px);
+
+}
+
+
+/* CHANNEL NAME */
+
+h1{
+
+font-size:32px;
+
+font-weight:800;
+
+letter-spacing:1px;
+
+margin-bottom:12px;
+
+}
+
+
+.subtitle{
+
+font-size:12px;
+
+letter-spacing:2.5px;
+
+color:rgba(255,255,255,.60);
+
+margin-bottom:28px;
+
+}
+
+
+.description{
+
+font-size:15px;
+
+line-height:1.6;
+
+color:rgba(255,255,255,.78);
+
+margin-bottom:27px;
+
+}
+
+
+/* JOIN BUTTON */
+
+.join-btn{
+
+position:relative;
+
+width:100%;
+
+padding:16px;
+
+border-radius:14px;
+
+border:
+1px solid rgba(255,215,100,.75);
+
+background:
+linear-gradient(
+135deg,
+#e7bd4d,
+#fff0a5,
+#d29d25
+);
+
+color:#080808;
+
+font-size:16px;
+
+font-weight:800;
+
+letter-spacing:.7px;
+
+cursor:pointer;
+
+overflow:hidden;
+
+box-shadow:
+
+0 0 12px
+rgba(255,200,60,.35),
+
+0 0 28px
+rgba(255,200,60,.13);
+
+transition:.25s;
+
+}
+
+
+/* BUTTON SHINE */
+
+.join-btn::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+left:-100%;
+
+width:50%;
+height:100%;
+
+background:
+linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.7),
+transparent
+);
+
+transform:skewX(-20deg);
+
+animation:shine 3s infinite;
+
+}
+
+
+.join-btn:hover{
+
+transform:translateY(-2px);
+
+box-shadow:
+
+0 0 18px
+rgba(255,200,60,.5),
+
+0 0 38px
+rgba(255,200,60,.2);
+
+}
+
+
+.join-btn:active{
+
+transform:scale(.98);
+
+}
+
+
+@keyframes shine{
+
+0%{
+left:-100%;
+}
+
+60%{
+left:-100%;
+}
+
+80%{
+left:130%;
+}
+
+100%{
+left:130%;
+}
+
+}
+
+
+.bottom-text{
+
+margin-top:17px;
+
+font-size:11px;
+
+color:rgba(255,255,255,.38);
+
+}
+
+
+@media(max-width:480px){
+
+.container{
+
+padding:
+35px 20px 28px;
+
+}
+
+h1{
+
+font-size:29px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<h1>
+Match Matrix
+</h1>
+
+
+<div class="subtitle">
+OUTTHINK. OUTTRADE. WIN.
+</div>
+
+
+<div class="description">
+
+Join the official Match Matrix Telegram channel
+for match updates and analysis.
+
+</div>
+
+
+<button
+class="join-btn"
+id="joinBtn"
+>
+
+JOIN TELEGRAM
+
+</button>
+
+
+<div class="bottom-text">
+
+Tap the button above to join the channel.
+
+</div>
+
+
+</div>
+
+
+
+<script>
+
+const telegramLink =
+"https://t.me/+dZqGYunQlQk0Zjll";
+
+
+document
+.getElementById("joinBtn")
+.addEventListener("click",function(){
+
+/* SUBSCRIBE EVENT */
+
+fbq(
+'track',
+'Subscribe'
+);
+
+
+/* TELEGRAM REDIRECT */
+
+setTimeout(function(){
+
+window.location.href =
+telegramLink;
+
+},350);
+
+});
+
+</script>
+
+
+</body>
+</html>
