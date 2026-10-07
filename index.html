@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -45,7 +45,6 @@ src="https://www.facebook.com/tr?id=1449156887356539&ev=PageView&noscript=1"
 />
 </noscript>
 
-
 <style>
 
 *{
@@ -55,15 +54,11 @@ box-sizing:border-box;
 }
 
 body{
-
 min-height:100vh;
-
 display:flex;
 align-items:center;
 justify-content:center;
-
 padding:20px;
-
 font-family:Arial,Helvetica,sans-serif;
 
 background:
@@ -75,21 +70,13 @@ transparent 35%
 #050505;
 
 color:white;
-
 }
 
-
-/* GLASS BOX */
-
 .container{
-
 width:100%;
 max-width:400px;
-
 padding:42px 25px 32px;
-
 text-align:center;
-
 border-radius:25px;
 
 background:
@@ -99,74 +86,44 @@ border:
 1px solid rgba(255,255,255,.13);
 
 box-shadow:
-
-0 0 35px
-rgba(255,190,50,.08),
-
-inset 0 1px 0
-rgba(255,255,255,.08);
+0 0 35px rgba(255,190,50,.08),
+inset 0 1px 0 rgba(255,255,255,.08);
 
 backdrop-filter:blur(18px);
 -webkit-backdrop-filter:blur(18px);
-
 }
-
-
-/* CHANNEL NAME */
 
 h1{
-
 font-size:32px;
-
 font-weight:800;
-
 letter-spacing:1px;
-
 margin-bottom:12px;
-
 }
-
 
 .subtitle{
-
 font-size:12px;
-
 letter-spacing:2.5px;
-
 color:rgba(255,255,255,.60);
-
 margin-bottom:28px;
-
 }
-
 
 .description{
-
 font-size:15px;
-
 line-height:1.6;
-
 color:rgba(255,255,255,.78);
-
 margin-bottom:27px;
-
 }
 
-
-/* JOIN BUTTON */
+/* TELEGRAM LINK */
 
 .join-btn{
-
 position:relative;
-
+display:block;
 width:100%;
-
 padding:16px;
 
 border-radius:14px;
-
-border:
-1px solid rgba(255,215,100,.75);
+border:1px solid rgba(255,215,100,.75);
 
 background:
 linear-gradient(
@@ -177,38 +134,25 @@ linear-gradient(
 );
 
 color:#080808;
-
 font-size:16px;
-
 font-weight:800;
-
 letter-spacing:.7px;
 
+text-decoration:none;
 cursor:pointer;
-
 overflow:hidden;
 
 box-shadow:
-
-0 0 12px
-rgba(255,200,60,.35),
-
-0 0 28px
-rgba(255,200,60,.13);
+0 0 12px rgba(255,200,60,.35),
+0 0 28px rgba(255,200,60,.13);
 
 transition:.25s;
-
 }
 
-
-/* BUTTON SHINE */
-
 .join-btn::before{
-
 content:"";
 
 position:absolute;
-
 top:0;
 left:-100%;
 
@@ -226,31 +170,19 @@ transparent
 transform:skewX(-20deg);
 
 animation:shine 3s infinite;
-
 }
 
-
 .join-btn:hover{
-
 transform:translateY(-2px);
 
 box-shadow:
-
-0 0 18px
-rgba(255,200,60,.5),
-
-0 0 38px
-rgba(255,200,60,.2);
-
+0 0 18px rgba(255,200,60,.5),
+0 0 38px rgba(255,200,60,.2);
 }
-
 
 .join-btn:active{
-
 transform:scale(.98);
-
 }
-
 
 @keyframes shine{
 
@@ -272,31 +204,20 @@ left:130%;
 
 }
 
-
 .bottom-text{
-
 margin-top:17px;
-
 font-size:11px;
-
 color:rgba(255,255,255,.38);
-
 }
-
 
 @media(max-width:480px){
 
 .container{
-
-padding:
-35px 20px 28px;
-
+padding:35px 20px 28px;
 }
 
 h1{
-
 font-size:29px;
-
 }
 
 }
@@ -305,83 +226,64 @@ font-size:29px;
 
 </head>
 
-
 <body>
 
-
 <div class="container">
-
 
 <h1>
 Match Matrix
 </h1>
 
-
 <div class="subtitle">
 OUTTHINK. OUTTRADE. WIN.
 </div>
 
-
 <div class="description">
-
 Join the official Match Matrix Telegram channel
 for match updates and analysis.
-
 </div>
 
-
-<button
+<a
+href="https://t.me/+dZqGYunQlQk0Zjll"
 class="join-btn"
 id="joinBtn"
 >
-
 JOIN TELEGRAM
-
-</button>
-
+</a>
 
 <div class="bottom-text">
-
 Tap the button above to join the channel.
-
 </div>
 
-
 </div>
-
-
 
 <script>
 
-const telegramLink =
-"https://t.me/+dZqGYunQlQk0Zjll";
-
-
 document
 .getElementById("joinBtn")
-.addEventListener("click",function(){
+.addEventListener("click", function(){
 
-/* SUBSCRIBE EVENT */
+/* MANUAL SUBSCRIBE EVENT */
 
-fbq(
-'track',
-'Subscribe'
-);
+fbq('track', 'Subscribe');
 
+/*
+   Small delay so Meta can receive
+   the Subscribe event before Telegram opens.
+*/
 
-/* TELEGRAM REDIRECT */
+event.preventDefault();
 
 setTimeout(function(){
 
 window.location.href =
-telegramLink;
+"https://t.me/+dZqGYunQlQk0Zjll";
 
 },350);
 
 });
 
 </script>
-
 
 </body>
 </html>
